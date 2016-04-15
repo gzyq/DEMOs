@@ -1,5 +1,4 @@
 <html>
-
 	<head>
 		<title>DeviceOrientationEvent</title>
 		<meta charset="UTF-8" />
@@ -9,9 +8,7 @@
 		<p>左右：<span id="alpha">0</span></p>
 		<p>前后：<span id="beta">0</span></p>
 		<p>扭转：<span id="gamma">0</span></p>
-		<p>指北针指向：<span id="heading">0</span>度</p>
-		<p>指北针精度：<span id="accuracy">0</span>度</p>
-		<p>角度</p>
+		<p>返回的均为角度</p>
 		<script type="text/javascript">
 			function orientationHandler(event) {  
 	           document.getElementById("alpha").innerHTML = event.alpha;  
@@ -24,7 +21,7 @@
 	        if (window.DeviceOrientationEvent) {  
 	          window.addEventListener("deviceorientation", orientationHandler, false);  
 	       } else {  
-	          document.body.innerHTML = "What user agent u r using";  
+	          document.body.innerHTML = "没有获取到旋转值";  
 	        }
 		</script>
 	</body>
