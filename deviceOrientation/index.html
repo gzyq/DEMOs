@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<title>DeviceOrientationEvent</title>
+	</head>
+<body>
+	<p>左右：<span id="alpha">0</span></p>
+	<p>前后：<span id="beta">0</span></p>
+	<p>扭转：<span id="gamma">0</span></p>
+	<p>返回的均为角度</p>
+	<script type="text/javascript">
+		function orientationHandler(event) {  
+           document.getElementById("alpha").innerHTML = event.alpha;  
+            document.getElementById("beta").innerHTML = event.beta;  
+            document.getElementById("gamma").innerHTML = event.gamma;  
+            //document.getElementById("heading").innerHTML = event.webkitCompassHeading;  
+            //document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;  
+        }  
+          
+        if (window.DeviceOrientationEvent) {  
+          window.addEventListener("deviceorientation", orientationHandler, false);  
+       } else {  
+          document.body.innerHTML = "没有获取到旋转值";  
+        }
+	</script>
+</body>
+</html>
