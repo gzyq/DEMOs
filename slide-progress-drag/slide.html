@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<title>JS滑动条demo</title>
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+<input type="text" name="" id="num"/>
+<div id="slide">
+	<div id="progress"></div>
+	<div id="handle"></div>
+</div>
+<script>
+	var slide = document.getElementById("slide");
+	var progress = document.getElementById("progress");
+	var handle = document.getElementById("handle");
+
+	var onmouse = false; //判断是否mousedown
+	var disX,moveX,moveL,max;
+	handle.addEventListener("mousedown",moveDown,false);
+	document.addEventListener("mousemove",moveMove,false);
+	document.addEventListener("mouseup",moveUp,false);
+
+	function moveDown(e){
+		onmouse = true;
+		var l = handle.offsetLeft; 
+		var x = e.clientX ;  
+
+		disX = x-l;  //点击滑块内区域，即鼠标点击点距离元素左边缘的距离
+		max = slide.offsetWidth - handle.offsetWidth;  //移动最大距离	
+	}
+
+	function moveMove(e){
+		if (!onmouse) {   //若没有mousedown滑块，则mousemove不产生距离
+			return;
+		}
+		moveX = e.clientX;
+		/**
+		 * [moveL 滑块移动总距离]
+		 * moveL = moveX - disX ; //粗略值：滑块移动总距离
+		 * moveL = Math.max(0,moveX - disX); //取0(初始left值)到moveL粗略值的中较大值，避免左侧滑出进度条范围
+		 * moveL = Math.min(max,moveL); //取两者的最小值，避免右侧滑出进度条范围
+		 */
+		
+		moveL = Math.min(max,Math.max(0,moveX - disX));
+
+		handle.style.left = moveL + 'px';  //设置滑块left值
+		progress.style.width = moveL + 'px';
+	}
+
+	function moveUp(e){
+		onmouse = false; 
+	}
+</script>
+</body>
+</html>
