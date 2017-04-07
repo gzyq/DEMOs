@@ -50,7 +50,7 @@ body{
 	height: 268px;
 	border: solid 1px #000;
 	overflow: hidden;
-	background: url(images/mark_edit_view.png) no-repeat;
+	background: url(../images/mark_edit_view.png) no-repeat;
 }
 .wmEditorWrap #wm-preview-img{
 	position: absolute;    
