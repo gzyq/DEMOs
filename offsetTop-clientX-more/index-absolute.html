@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<title>top-left-脱离文档流</title>
+	<style>
+	*{margin:0;padding: 0;}
+		#main{position:relative;width: 400px;height: 400px;margin-left: 50px;background: #999; overflow: hidden;}
+		#my{position: absolute;top: 10px;left: 20px;width: 110px;height: 100px;padding:5px;background: #148627;margin-top: 10px;margin-left: 20px;border:solid 3px;}
+		#you{position: absolute;top: 140px;left: 0px; overflow: auto;white-space: nowrap;width: 200px;height: 200px;margin-top: 10px;background: #ec3591;border:solid 6px;}
+	</style>
+</head>
+<body>
+<div style="height: 111px;">占位：<h1>此DEMO为脱离文档流情况下</h1></div>
+	<div id="main">
+		<div id="my">id="my"-点我查看参数</div>
+		<div id="you">id="you"<br/>滑动或点击查看参数<br/>- overflow: auto;white-space: nowrap;<br/>--------------------------<br/>scroll<br/>scroll<br/>scroll<br/>scroll<br/>scroll<br/>scroll<br/>scroll<br/>scroll<br/></div>
+	</div>
+	<div id="show"></div><br/>
+<script>
+	var show = document.getElementById("show");
+	var show2 = document.getElementById("show2");
+	var show3 = document.getElementById("show3");
+
+	var main = document.getElementById("main");
+	var my = document.getElementById("my");
+	var you = document.getElementById("you");
+
+
+	my.addEventListener("click",showPX,false);
+
+	you.addEventListener("click",scrollPX,false);
+	you.addEventListener("scroll",scrollPX,false);
+
+	function showPX(e){
+		show.innerHTML = "my.scrollWidth:"+ my.scrollWidth+
+					"<br/>my.scrollHeight:"+my.scrollHeight+
+					'<br/> my.scrollTop:'+my.scrollTop+
+					'<br/>my.scrollLeft:'+my.scrollLeft+
+					"<br/><br/>my.offsetTop:"+ my.offsetTop+
+					"<br/>my.offsetLeft:"+my.offsetLeft+
+					'<br/>my.offsetHeight:'+my.offsetHeight+
+					'<br/> my.offsetWidth:'+my.offsetWidth+
+					'<br/><br/>my.clientHeight:'+my.clientHeight+
+					'<br/> my.clientWidth:'+my.clientWidth+
+					'<br/> my.clientLeft:'+my.clientLeft+
+					'<br/> my.clientTop:'+my.clientTop+
+					"<br/><br/>相对文档的水平座标--e.clientX:"+ e.clientX+
+				  "<br/>相对文档的垂直座标--e.clientY:"+e.clientY+
+				  "<br/>相对容器的水平坐标--e.offsetX:"+ e.offsetX+
+				  "<br/>相对容器的垂直坐标--e.offsetY:"+e.offsetY;
+		console.log(e.clientX );
+	}
+
+	function scrollPX(e){
+		show.innerHTML ="you.scrollWidth:"+ you.scrollWidth+
+					"<br/>you.scrollHeight:"+you.scrollHeight+
+					'<br/> you.scrollTop:'+you.scrollTop+
+					'<br/>you.scrollLeft:'+you.scrollLeft+
+					"<br/><br/>you.offsetTop:"+ you.offsetTop+
+					"<br/>you.offsetLeft:"+you.offsetLeft+
+					'<br/>you.offsetHeight:'+you.offsetHeight+
+					'<br/> you.offsetWidth:'+you.offsetWidth+
+					'<br/><br/>you.clientHeight:'+you.clientHeight+
+					'<br/> you.clientWidth:'+you.clientWidth+
+					'<br/> you.clientLeft:'+you.clientLeft+
+					'<br/> you.clientTop:'+you.clientTop+
+					"<br/><br/>相对文档的水平座标--e.clientX:"+ e.clientX+
+				  "<br/>相对文档的垂直座标--e.clientY:"+e.clientY+
+				  "<br/>相对容器的水平坐标--e.offsetX:"+ e.offsetX+
+				  "<br/>相对容器的垂直坐标--e.offsetY:"+e.offsetY;
+	}
+
+
+
+
+
+</script>
+</body>
+</html>

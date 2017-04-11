@@ -9,3 +9,6 @@
 **在线地址**：[JS进度条demo](http://gzyq.github.io/DEMOs/slide-progress-drag/progress.html)<br/>
 **在线观看**：[JS滚动条demo](http://gzyq.github.io/DEMOs/slide-progress-drag/slide.html)<br/>
 **在线观看**：[JS拖拽demo](http://gzyq.github.io/DEMOs/slide-progress-drag/drag.html)
+### offsetTop-clientX-more JS offsetTop等相关概念###
+**在线观看**：[offsetTop-clientX-more-demo](http://gzyq.github.io/DEMOs/offsetTop-clientX-more/index-normal.html)<br/>
+**详细示意图**：参考文章《[JS clientX\offsetLeft\scrollHeight等相关解读](https://gzyq.github.io/2017/03/05/JS-clientX/)》
