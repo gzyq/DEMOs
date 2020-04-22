@@ -2,7 +2,7 @@
 ### deviceOrientation手机重力角测试 ###
 **在线地址**：[http://gzyq.github.io/DEMOs/deviceOrientation/index.html](http://gzyq.github.io/DEMOs/deviceOrientation/index.html)<br/>
 ![](http://i.imgur.com/CNYBAHN.png)
-### setImgPositon预览设置图片位置 ###
+### setImgPositon预览设置图片位 置  ###
 **在线地址**：[http://gzyq.github.io/DEMOs/setImgPositon/index.html](http://gzyq.github.io/DEMOs/setImgPositon/index.html)<br/>
 ![](http://i.imgur.com/r18VC1N.png)
 ### slide-progress-drag JS滑动条、进度条、拖拽 ###
